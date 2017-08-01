@@ -35,10 +35,10 @@ public class JClient {
        }
 
        public CompletionStage set(String key, Object value) {
-           return toJava(Patterns.ask(localActor, new ValueObj(key, value), 20000));
+           return toJava(Patterns.ask(localActor, new ValueObj(key, value), 200));
 
        }
        public CompletionStage<Object> get(String key){
-           return toJava(Patterns.ask(localActor, new GetValue(key), 20000));
+           return toJava(Patterns.ask(localActor, new GetValue(key), 200));
        }
 }
